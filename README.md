@@ -104,3 +104,39 @@ On test failures, screenshots are automatically captured and saved in screenshot
 - This project is integrated with Jenkins Pipeline to:
 - Run tests automatically on each code push
 - Publish Playwright HTML reports as build artifacts
+
+Create Jenkinsfile
+```bash
+pipeline {
+    agent any
+    stages {
+        stage('Checkout Code') {
+            steps {
+                script {
+                    checkout([$class: 'GitSCM',
+                        branches: [[name: 'main']],
+                        userRemoteConfigs: [[
+                            url: 'https://github.com/roshan-khichi/Playwright-Automation-with-TypeScript.git',
+                            credentialsId: 'jenkins_token'  // Use the ID from Jenkins credentials
+                        ]]
+                    ])
+                }
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+                bat 'npx playwright install'
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                bat 'npm run test-and-email'
+            }
+        }
+    }
+}
+
+```
