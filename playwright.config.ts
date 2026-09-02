@@ -83,7 +83,7 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'], channel: 'chrome',
         viewport: null, // Use full screen
-        headless: false, // Non-headless mode
+        headless: true, // Non-headless mode
         launchOptions: {
           args: [
             '--start-maximized', // Open browser maximized
