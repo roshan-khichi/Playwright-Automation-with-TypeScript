@@ -1,0 +1,6 @@
+playwright-report
+screenshots
+.env
+.env.example
+package-lock.json
+node_modules
