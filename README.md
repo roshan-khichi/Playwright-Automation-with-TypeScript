@@ -50,7 +50,7 @@ Jenkins
 
 Clone the repo
 ```bash
-git clone https://github.com/your-username/playwright-automation.git
+git clone https://github.com/roshan-khichi/Playwright-Automation-with-TypeScript.git
 cd playwright-automation
 ```
 
