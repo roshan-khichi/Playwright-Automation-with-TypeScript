@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx playwright test",
     "send-report": "node ./tests/Pages/email.js",
-    "test-and-email": "npx run test || npx run send-report"
+    "test-and-email": "npx playwright test || npm run send-report"
   },
   "keywords": [],
   "author": "",
