@@ -66,19 +66,19 @@ npm install
 Run all tests
 
 ```bash
-npx test
+npm test
 ```
 
 Run tests with browser UI (headed mode)
 
 ```bash
-npx test --headed
+npm test -- --headed
 ```
 
 Run a specific test file
 
 ```bash
-npx test tests/login.spec.ts
+npm test -- tests/Specs/main.spec.ts
 ```
 
 Run with HTML report
@@ -94,6 +94,19 @@ To open it in browser:
 
 ```bash
 npx playwright show-report
+```
+
+Send the latest Playwright report by email. Configure the SMTP variables in
+`.env` first, then run:
+
+```bash
+npm run send-report
+```
+
+Run the tests and send the report only if a test fails:
+
+```bash
+npm run test-and-email
 ```
 
 On test failures, screenshots are automatically captured and saved in screenshots/.
