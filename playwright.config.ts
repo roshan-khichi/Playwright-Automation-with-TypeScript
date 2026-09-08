@@ -5,7 +5,7 @@ import * as os from "node:os";
 
 /**
  * Read environment variables from file dynamically based on TEST_ENV.
- * If TEST_ENV is not passed, it defaults to 'qa' (loading .env.qa).
+ * If TEST_ENV is not passed, it defaults to 'dev' (loading .env.dev).
  * https://github.com/motdotla/dotenv
  */
 const environment = process.env.TEST_ENV || 'dev';
