@@ -4,11 +4,12 @@ import path from 'path';
 import * as os from "node:os";
 
 /**
- * Read environment variables from file.
+ * Read environment variables from file dynamically based on TEST_ENV.
+ * If TEST_ENV is not passed, it defaults to 'qa' (loading .env.qa).
  * https://github.com/motdotla/dotenv
  */
-
-dotenv.config({ path: path.resolve(__dirname, '../../.env') });
+const environment = process.env.TEST_ENV || 'dev';
+dotenv.config({ path: path.resolve(__dirname, `.env.${environment}`) });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
